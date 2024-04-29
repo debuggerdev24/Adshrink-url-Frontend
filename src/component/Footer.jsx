@@ -130,23 +130,24 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="border-b border-gray-800"></div>
+        <div className="border-b p-2 border-gray-800"></div>
         <div className="text-center py-4">
-          <p className="text-sm ">
+          <p className="text-xs font-normal">
             By using our site, you acknowledge that you have read and understand
             our Cookie Policy, Privacy Policy, and our Terms of Service.
           </p>
-          <p className="flex justify-center items-center gap-1 text-sm">
-            <BsCurrencyBitcoin color="white" fontSize={20} />
-            <span>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-1 text-sm">
+            <span className="flex justify-center items-center gap-1 text-sm">
+              <BsCurrencyBitcoin color="white" fontSize={20} />
               Please <span className="font-bold">Donate</span> to this Bitcoin
               address:
-              <span className="font-bold">
-                1NMMDfb5tn2dqNKcD6CohJzoYWoepdHgUq
-              </span>
             </span>
-          </p>
-          <div className="flex justify-center text-xs my-5 mt-10 text-gray-400 items-center gap-2">
+            <span className="font-bold">
+              1NMMDfb5tn2dqNKcD6CohJzoYWoepdHgUq
+            </span>
+          </div>
+
+          <div className="flex justify-center text-xs flex-wrap my-5 mt-10 text-gray-400 items-center gap-2">
             <a
               className="border-r-2 pe-2 border-gray-400 hover:text-white"
               href="https://adshnk.com/sitemap.xml"

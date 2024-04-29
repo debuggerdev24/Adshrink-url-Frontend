@@ -7,7 +7,7 @@ import logo from "../indiaFlag.svg";
 const News = () => {
   return (
     <>
-      <div className="m-auto max-w-screen-lg md:px-0 p-3">
+      <div className="m-auto max-w-screen-lg md:px-0 p-5">
         <div className="flex items-center p-5 gap-2">
           <div className="ui header">
             <FaRegNewspaper fontSize={30} />

@@ -19,11 +19,12 @@ const Preview = () => {
   return (
     <div className="information grid grid-cols-1 md:grid-cols-4 border-b-2 border-gray-200 bg-white">
       <div className="col-span-1 bg-gray-100 md:col-span-1"></div>
+
       <div className="col-span-1 md:col-span-3 flex flex-col">
         <div class="bg-white p-6 m-9"></div>
         {/* 1st row */}
-        <div className="bg-black">
-          <div className="grid md:grid-cols-12 ">
+        <div className="bg-black m-6 md:m-0">
+          <div className="grid md:grid-cols-12 p-3 md:p-0 ">
             <div className="md:col-span-3">
               <div className="bg-white p-0">
                 <img
@@ -69,7 +70,7 @@ const Preview = () => {
                 </div>
               </div>
             </div>
-            <div className="md:col-span-4 flex p-2 gap-3 flex-col justify-center items-center">
+            <div className="md:col-span-4 flex p-0 md:p-2 gap-3 flex-col justify-center items-center">
               <div className="bg-green-400 w-full font-extralight flex justify-between items-center text-white rounded cursor-pointer text">
                 <div className="p-2 font-normal text-lg ml-14">
                   {" "}
@@ -104,7 +105,7 @@ const Preview = () => {
               <p className="text-xs text-green-500 flex items-center gap-1">
                 <FaLock />
                 SECURE
-                <span className="text-white60">
+                <span className="text-white60 truncate">
                   https://psa.re/exit/A7E9F458D3C6B0E48D8026B406177EEE00/3OxWrlMDm+ktEEO0G...
                 </span>
               </p>
@@ -199,7 +200,6 @@ const Preview = () => {
             </div>
           </div>
         </div>
-        {/* 4th row */}
         <div class="bg-white p-6 m-3"></div>
         <p class="text-xs text-black-light text-center p-2">
           Loaded in 0.00n seconds (0.0n% difference)

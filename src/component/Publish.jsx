@@ -13,7 +13,7 @@ const Publish = () => {
             />
           </div>
         </div>
-        <div className="p-1">
+        <div className="p-5">
           <h1 className="text-sm text-white60">MONETIZE</h1>
           <h2 className="text-2xl font-bold mb-4">
             Publish anywhere, grow everywhere.

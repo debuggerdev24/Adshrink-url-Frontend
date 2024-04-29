@@ -16,7 +16,7 @@ const Navbar = () => {
             alt="Logo"
           />
         </div>
-        <div className="flex justify-between ml-auto gap-6 md:gap-7 items-center space-x-4">
+        <div className="flex justify-between gap-0 ml-auto md:gap-7 items-center space-x-4">
           <div>
             <FaBookmark color="white" />
           </div>

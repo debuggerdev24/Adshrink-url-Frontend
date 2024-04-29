@@ -8,7 +8,7 @@ const Page = () => {
   const captchaRef = useRef(null);
 
   const handleVerify = (token) => {
-    console.log("hCaptcha token:", token);
+    // console.log("hCaptcha token:", token);
     setIsCaptchaPassed(true);
   };
 
@@ -47,7 +47,7 @@ const Page = () => {
               ref={captchaRef}
             ></div>
           </div>
-          <div className="w-full lg:w-2/5 me-md:w-1/2 p-4 pl-0  md:pl-32  flex flex-col justify-center">
+          <div className="w-full md:w-[500px] p-4 pl-0 lg:pl-32 flex flex-col justify-center">
             <div className="bg-white border rounded-lg ml-9 shadow-sm">
               <div className="flex justify-between p-4 border-b items-center">
                 <div className="flex items-center justify-between">

@@ -5,8 +5,11 @@ const Card = ({ data }) => {
   return (
     <div className="flex flex-col md:flex-row flex-wrap gap-6">
       {data.map((news, index) => (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[500px]  bg-white p-4 border">
-          <div className="col-span-1 md:col-span-1 w-full md:w-[160px] h-[160px]">
+        <div
+          key={index}
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[500px]  bg-white p-4 border"
+        >
+          <div className="col-span-1 md:col-span-1 w-full h-full md:w-[160px] md:h-[160px]">
             <img
               src={news.image}
               alt={news.title}

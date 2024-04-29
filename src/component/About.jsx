@@ -6,7 +6,7 @@ function About() {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-auto max-w-screen-lg md:px-0 items-center">
-        <div className="p-8">
+        <div className="p-5">
           <h1 className="text-sm text-about-grey">ABOUT</h1>
           <h1 className="text-2xl font-bold mb-4">
             Unleash the power of the link
@@ -41,7 +41,7 @@ function About() {
             Get Our Services <FaArrowRight />
           </a>
         </div>
-        <div className="p-8">
+        <div className="p-5">
           <img
             src="https://adshrink.it/wp-content/uploads/2019/02/ndkejndksjndks.png"
             alt="Unleash the power of the link"

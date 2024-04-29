@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
-}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  50% {
+    background-position: 100% 50%;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  background-color: #f8f9fa;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-main {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav {
+  background: linear-gradient(-45deg, #525cee, #e73c7e, #1196e6, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.mainContainer {
+  background-image: linear-gradient(
+      to left,
+      rgb(248, 249, 250) 40%,
+      rgba(248, 249, 250, 0)
+    ),
+    url(https://i.ibb.co/WHNbxPZ/bot-analytics-hero-illustration-3-1.png);
+  padding: 120px 0px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 8% 5% 5% 5%;
+  background-position: calc(50% + 50px) 50%;
+}
+.information {
+  padding: 73px 0px 0px 0px;
+  /* margin: 8% 5% 5% 5%; */
+}
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 80px 0px;
+    margin: 18% 5% 5% 5%;
   }
 }

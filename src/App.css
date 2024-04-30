@@ -22,6 +22,9 @@ body {
   z-index: 1;
   width: 100%;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 .nav {
   background: linear-gradient(-45deg, #525cee, #e73c7e, #1196e6, #23d5ab);

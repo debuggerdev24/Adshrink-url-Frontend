@@ -1,0 +1,97 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-brands-400.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-brands-400.woff)
+      format("woff"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-brands-400.ttf)
+      format("truetype");
+}
+.fab {
+  font-family: "Font Awesome 5 Brands";
+}
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.eot);
+  src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.woff)
+      format("woff"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.ttf)
+      format("truetype"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-light-300.svg#fontawesome)
+      format("svg");
+}
+.fal {
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.eot);
+  src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.woff)
+      format("woff"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.ttf)
+      format("truetype"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-regular-400.svg#fontawesome)
+      format("svg");
+}
+.fal,
+.far {
+  font-family: "Font Awesome 5 Pro";
+}
+.far {
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.eot);
+  src: url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.woff)
+      format("woff"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.ttf)
+      format("truetype"),
+    url(https://cdn.jsdelivr.net/gh/tallesairan/FA5PRO/webfonts/fa-solid-900.svg#fontawesome)
+      format("svg");
+}
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+i.fal {
+  font-style: initial;
+}
+:root {
+  --theme: ":white_circle:️";
+  --background-layer: rgba(0, 0, 0, 0.75);
+  --app-icon-wrapper: white;
+  --primary-color: #222;
+  --secondary-color: #222;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #4184f3;
+  --button-color: #fff;
+  --button-bg-color: linear-gradient(180deg, #4184f3 0%, #367af6 100%);
+}

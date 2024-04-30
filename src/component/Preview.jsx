@@ -1,19 +1,9 @@
 import React from "react";
-import {
-  FaCheckCircle,
-  FaRegBookmark,
-  FaArrowRight,
-  FaGem,
-  FaComments,
-  FaShare,
-  FaLock,
-  FaHtml5,
-  FaRegHeart,
-  FaExternalLinkSquareAlt,
-} from "react-icons/fa";
+import { FaLock, FaHtml5, FaExternalLinkSquareAlt } from "react-icons/fa";
 import { FaHeading } from "react-icons/fa6";
 import { IoInformationCircle } from "react-icons/io5";
 import { wikiData } from "../constant/Contant";
+import PreviewModal from "./PreviewModal";
 
 const Preview = () => {
   return (
@@ -23,69 +13,7 @@ const Preview = () => {
       <div className="col-span-1 md:col-span-3 flex flex-col">
         <div class="bg-white p-6 m-9"></div>
         {/* 1st row */}
-        <div className="bg-black m-6 md:m-0">
-          <div className="grid md:grid-cols-12 p-3 md:p-0 ">
-            <div className="md:col-span-3">
-              <div className="bg-white p-0">
-                <img
-                  src="https://www.shrink-service.it/png/search/preview_one.png"
-                  alt="preview"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-            <div className="md:col-span-5 p-4 flex items-center">
-              <div>
-                <h2 className="text-white80 bg-opacity-80">
-                  Created <b>4 years ago</b>
-                </h2>
-                <p className="text-white font-bold flex items-center gap-2">
-                  PSArips <FaCheckCircle fontSize={18} color="#4184F3" />
-                </p>
-                <p className="text-white font-bold flex items-center gap-2">
-                  - Continue with the Download{" "}
-                  <FaRegBookmark
-                    fontSize={15}
-                    className="hover:text-blue-400 cursor-pointer"
-                    color="#4184F3"
-                  />
-                </p>
-                <div className="flex flex-row mt-7 items-center text-white80  text-white">
-                  <a className="flex items-center text-xs gap-2 mx-auto border hover:border-white rounded-l border-about-grey p-1 ">
-                    <FaGem fontSize={13} />
-                    Support
-                  </a>
-                  <a className="flex items-center text-xs gap-2 border hover:border-white  border-about-grey  p-1 ">
-                    <FaRegHeart fontSize={13} color="white" />
-                    Like
-                  </a>
-                  <a className="flex items-center gap-2 text-xs border hover:border-white border-about-grey  p-1 ">
-                    <FaComments fontSize={13} />
-                    Comments
-                  </a>
-                  <a className="flex items-center gap-2 text-xs border hover:border-white border-about-grey  p-1 rounded-r">
-                    <FaShare fontSize={13} />
-                    Share
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="md:col-span-4 flex p-0 md:p-2 gap-3 flex-col justify-center items-center">
-              <div className="bg-green-400 w-full font-extralight flex justify-between items-center text-white rounded cursor-pointer text">
-                <div className="p-2 font-normal text-lg ml-14">
-                  {" "}
-                  Click here to Continue{" "}
-                </div>
-                <div className="flex p-4 items-center bg-green-500">
-                  <FaArrowRight className="ml-2" />
-                </div>
-              </div>
-              <div className="bg-[#4184f3] text-sm cursor-pointer p-1 w-full flex items-center justify-center text-white rounded">
-                <p className="p-1 font-normal "> Premium Access</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <PreviewModal />
         <div class="bg-white p-6 m-44"></div>
         {/* 2nd row */}
         <div className="bg-white p-6">

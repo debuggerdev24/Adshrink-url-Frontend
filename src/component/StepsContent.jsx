@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
@@ -18,11 +18,18 @@ const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
       setTimeout(() => {
         setActive(4);
         setActiveFlag(false);
-        setIsStepTwo(false);
         setCountdownsteptwo(true);
+        // setIsStepTwo(false);
       }, 15000);
     }
   };
+  useEffect(() => {
+    setTimeout(() => {
+      if (active === 4) {
+        setIsStepTwo(false);
+      }
+    }, 700);
+  }, [active]);
 
   return (
     <div className="instructions">
@@ -31,7 +38,8 @@ const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
         alt="steps"
         style={{ width: "100%" }}
       />
-      <div className="py-5 px-0 md:px-12 flex justify-center flex-col gap-5 ">
+      <div className="Stepdata py-10 px-0 md:px-12 flex justify-center flex-col gap-5 ">
+        {/* Your content here */}
         <div className="flex justify-center items-center m-0 md:m-auto">
           {/* active step-1 */}
           <div>
@@ -48,7 +56,10 @@ const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
                   style={{ color: active > 1 ? "#13dc74" : "" }}
                 ></i>
               )}
-              <i className="fal fa-mouse-pointer fa-stack-1x fa-sm"></i>
+              <i
+                className="fal fa-mouse-pointer fa-stack-1x fa-sm"
+                style={{ color: active > 1 ? "#13dc74" : "" }}
+              ></i>
             </span>
           </div>
 
@@ -70,7 +81,10 @@ const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
                 ></i>
               )}
 
-              <i className="fal fa-puzzle-piece fa-stack-1x fa-sm"></i>
+              <i
+                className="fal fa-puzzle-piece fa-stack-1x fa-sm"
+                style={{ color: active > 2 ? "#13dc74" : "" }}
+              ></i>
             </span>
           </div>
 
@@ -87,10 +101,13 @@ const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
               ) : (
                 <i
                   className="fal fa-circle fa-stack-2x"
-                  style={{ color: active > 2 ? "#13dc74" : "" }}
+                  style={{ color: active > 3 ? "#13dc74" : "" }}
                 ></i>
               )}
-              <i className="fal fa-check fa-stack-1x fa-sm"></i>
+              <i
+                className="fal fa-check fa-stack-1x fa-sm"
+                style={{ color: active > 3 ? "#13dc74" : "" }}
+              ></i>
             </span>
           </div>
         </div>
@@ -121,16 +138,19 @@ const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
             and verify the click.
           </p>
           <a
-            className={`bg-blue-400 w-full hover:bg-blue-600 font-extralight flex ${
-              isloding ? "justify-center cursor-not-allowed" : "justify-end"
-            }  justify-end items-center  text-white rounded cursor-pointer `}
+            className={`bg-blue-500 hover:bg-blue-600 hover:text-white hover:shadow-inner hover:border-opacity-30 hover:border-black hover:inset-0
+           font-extralight flex ${
+             isloding
+               ? "justify-center w-full py-1 cursor-not-allowed"
+               : "justify-end w-fit pl-12 "
+           }  items-center  text-white rounded cursor-pointer `}
             onClick={startStepSequence}
           >
             {isloding ? (
               <div role="status">
                 <svg
                   aria-hidden="true"
-                  class="inline w-8 h-8 px-2 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
+                  className="inline w-10 h-10 px-2 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -144,11 +164,11 @@ const StepsContent = ({ setIsStepTwo, setCountdownsteptwo }) => {
                     fill="currentFill"
                   />
                 </svg>
-                <span class="sr-only">Loading...</span>
+                <span className="sr-only">Loading...</span>
               </div>
             ) : (
               <>
-                <h2 className="text-sm  md:text:xl  font-normal  text-white rounded">
+                <h2 className="text-sm md:text-base  text-white rounded">
                   Discover and Click on the Search Ad
                 </h2>
                 <div className="flex p-4 items-center bg-blue-500">

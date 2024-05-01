@@ -21,6 +21,9 @@ const PreviewModal = () => {
   const [countdown, setCountdown] = useState(7);
   const [countdownFinished, setCountdownFinished] = useState(false);
   const [countdownsteptwo, setCountdownsteptwo] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [IsLoaderOne, setIsLoaderOne] = useState(true);
+  const [IsLoaderTwo, setIsLoaderTwo] = useState(true);
 
   useEffect(() => {
     let timer;
@@ -33,6 +36,35 @@ const PreviewModal = () => {
     }
     return () => clearTimeout(timer);
   }, [countdown, isStepOne]);
+  //
+  useEffect(() => {
+    let timer;
+    if (countdownsteptwo && countdownFinished && isLoading) {
+      timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+    }
+
+    return () => clearTimeout(timer);
+  }, [countdownsteptwo, countdownFinished, isLoading]);
+  useEffect(() => {
+    let timer;
+    if (isStepOne && IsLoaderOne)
+      timer = setTimeout(() => {
+        setIsLoaderOne(false);
+      }, 500);
+
+    return () => clearTimeout(timer);
+  }, [isStepOne, IsLoaderOne]);
+  useEffect(() => {
+    let timer;
+    if (isStepTwo && IsLoaderTwo)
+      timer = setTimeout(() => {
+        setIsLoaderTwo(false);
+      }, 500);
+
+    return () => clearTimeout(timer);
+  }, [isStepTwo, IsLoaderTwo]);
 
   const handleClose = () => {
     if (countdown <= 0) {
@@ -93,20 +125,39 @@ const PreviewModal = () => {
             <>
               {countdownsteptwo && countdownFinished ? (
                 <>
-                  <div className="bg-[#4184f3] w-full font-extralight flex justify-between items-center text-white rounded cursor-pointer">
-                    <p className="font-thin ml-14 text-center">Continue(1/1)</p>
-                    <div className="flex p-2 items-center bg-blue-400">
-                      <FaArrowRight className="ml-2" />
-                    </div>
-                  </div>
-                  <button className="bg-green-400 w-full font-extralight flex justify-between items-center text-white rounded cursor-pointer">
-                    <div className="p-2 font-normal text-lg ml-14">
-                      Direct Access Telegram
-                    </div>
-                  </button>
-                  <span className="text-blue-400 text-xs ">
-                    Leave a comment..
-                  </span>
+                  {!isLoading ? (
+                    <>
+                      <div className="bg-[#4184f3] w-full hover:bg-[#1e70bf] font-extralight flex justify-between items-center text-white rounded cursor-pointer">
+                        <p className="font-thin mx-auto text-center">
+                          Continue(1/1)
+                        </p>
+                        <p className="flex p-2 items-center bg-blue-400">
+                          <FaArrowRight className="ml-2" />
+                        </p>
+                      </div>
+
+                      <a
+                        className="bg-green-400 w-full font-extralight flex justify-between items-center text-white rounded cursor-pointer"
+                        href="https://t.me/adshrink_bot/?start=artcode-PSAREL"
+                        target="_blank"
+                      >
+                        <div className="p-2  font-norma text-center flex-1 text-xl ml-14">
+                          Direct Access Telegram
+                        </div>
+                      </a>
+                      <a className="text-blue-400 text-xs hover:text-[#1e70bf] ">
+                        Leave a comment..
+                      </a>
+                    </>
+                  ) : (
+                    <button className="bg-green-400 w-full p-1 font-extralight flex justify-between items-center text-white rounded">
+                      <p className="font-bold text-lg flex-1">Loading ...</p>
+                      <div
+                        className="flex p-4 items-center 
+                     bg-green-500 spin"
+                      ></div>
+                    </button>
+                  )}
                 </>
               ) : (
                 <>
@@ -165,7 +216,7 @@ const PreviewModal = () => {
                 className="bg-green-400 w-full font-extralight flex justify-between items-center text-white rounded cursor-pointer"
                 onClick={() => setIsModalOpen(true)}
               >
-                <div className="p-2 font-normal text-lg ml-14">
+                <div className="p-2 font-normal flex-1 text-lg ml-14">
                   Click here to Continue
                 </div>
                 <div className="flex p-4 items-center bg-green-500">
@@ -178,13 +229,10 @@ const PreviewModal = () => {
             </>
           )}
 
-          {/* <div className="bg-[#4184f3] text-sm cursor-pointer p-1 w-full flex items-center justify-center text-white rounded">
-          <p className="p-1 font-normal "> Premium Access</p>
-        </div> */}
           {isStepOne && (
             <div className="fixed inset-0 z-50 flex items-center justify-center">
               <div className="absolute inset-0 bg-gray-800 bg-opacity-50"></div>
-              <div className="modal bg-white rounded-lg w-8/12 h-5/6 relative">
+              <div className="modal bg-white rounded-lg w-8/12  h-5/6 relative">
                 <div className="flex justify-between p-4 bg-blue-500 px-8 items-center mb-4">
                   <h2 className="text-xl text-white font-bold rounded">
                     Discover interesting articles
@@ -207,7 +255,32 @@ const PreviewModal = () => {
                     )}
                   </button>
                 </div>
-                <p className="text-center h-[200px] w-[500px] text-lg font-semibold"></p>
+                {IsLoaderOne ? (
+                  <div className="text-center text-slate-500 flex flex-col w-fit pt-[150px] m-auto items-center text-lg font-semibold">
+                    <div role="status">
+                      <svg
+                        aria-hidden="true"
+                        className="inline w-12 h-12 px-2 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
+                        viewBox="0 0 100 101"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                          fill="currentFill"
+                        />
+                      </svg>
+                      <span className="sr-only">Loading...</span>
+                    </div>
+                    Loading...
+                  </div>
+                ) : (
+                  <p className="text-center  text-lg font-semibold"></p>
+                )}
               </div>
             </div>
           )}
@@ -220,20 +293,45 @@ const PreviewModal = () => {
                     Discover relating topics
                   </h2>
                 </div>
-                <div className="flex justify-between">
-                  <div className=" w-1/5">
-                    <img src="https://adshnk.com/src/img/right-row.svg" />
+                {IsLoaderTwo ? (
+                  <div className="text-center text-slate-500 flex flex-col w-fit pt-[150px] m-auto items-center text-lg font-semibold">
+                    <div role="status">
+                      <svg
+                        aria-hidden="true"
+                        className="inline w-12 h-12 px-2 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
+                        viewBox="0 0 100 101"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                          fill="currentFill"
+                        />
+                      </svg>
+                      <span className="sr-only">Loading...</span>
+                    </div>
+                    Loading...
                   </div>
-                  <div className=" w-full md:w-3/5 2xl:w-[600px] shadow-lg shadow-gray-200 rounded-sm border my-3 border-slate-200">
-                    <StepsContent
-                      setIsStepTwo={setIsStepTwo}
-                      setCountdownsteptwo={setCountdownsteptwo}
-                    />
+                ) : (
+                  <div className="flex justify-between">
+                    <div className="hidden md:block w-1/5">
+                      <img src="https://adshnk.com/src/img/right-row.svg" />
+                    </div>
+                    <div className=" w-full md:w-3/5 2xl:w-[600px] shadow-lg shadow-gray-200 rounded-sm border my-3 border-slate-200">
+                      <StepsContent
+                        setIsStepTwo={setIsStepTwo}
+                        setCountdownsteptwo={setCountdownsteptwo}
+                      />
+                    </div>
+                    <div className="hidden md:block w-1/5">
+                      <img src="https://adshnk.com/src/img/left-row.svg" />
+                    </div>
                   </div>
-                  <div className=" w-1/5">
-                    <img src="https://adshnk.com/src/img/left-row.svg" />
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           )}
